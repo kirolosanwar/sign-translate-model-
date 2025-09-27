@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Language Recognition</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input[type="file"], input[type="number"] {
+            margin: 5px 0;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result-box {
+            margin-top: 30px;
+            padding: 20px;
+            background: #e8f5e9;
+            border-left: 6px solid #2ecc71;
+            border-radius: 8px;
+        }
+        .result-box h3 {
+            margin-top: 0;
+            color: #27ae60;
+        }
+        .result-box p {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>🖐️ Sign Language Recognition</h2>
+        <form method="POST" enctype="multipart/form-data">
+            <p>✨ ارفع لحد 6 صور واكتب الترتيب:</p>
+            {% for i in range(6) %}
+                <p>
+                    صورة {{i+1}}: <input type="file" name="images"><br>
+                    ترتيب: <input type="number" name="order" min="1" max="6" value="{{i+1}}">
+                </p>
+            {% endfor %}
+            <button type="submit">🚀 ترجم الصور</button>
+        </form>
+
+        {% if result %}
+        <div class="result-box">
+            <h3>📝 الترجمة:</h3>
+            <p>{{ result }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
