@@ -25,6 +25,6 @@ Users can upload up to **6 images** and specify their order. The system then dis
 
 data source: https://www.kaggle.com/datasets/grassknoted/asl-alphabet/data
 
-![Image description](ouput/Screenshot 2025-09-27 191736.png)
+![Image description](ouput/1.png.png)
 
 
